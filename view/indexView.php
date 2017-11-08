@@ -30,22 +30,22 @@
 		<div id="s_rg" style="background-image: url('images/icons/rar.png');"></div>
 		<div class="sl_vp">
 			<ul class="list-inline">
-				<li><div><img src="images/logos/elf.png"></div></li>
-				<li><div><img src="images/logos/motul.png"></div></li>
-				<li><div><img src="images/logos/elf.png"></div></li>
-				<li><div><img src="images/logos/idemitsu.png"></div></li>
-				<li><div><img src="images/logos/castrol.png"></div></li>
-				<li><div><img src="images/logos/motul.png"></div></li>
-				<li><div><img src="images/logos/elf.png"></div></li>
-				<li><div><img src="images/logos/idemitsu.png"></div></li>
-				<li><div><img src="images/logos/castrol.png"></div></li>
-				<li><div><img src="images/logos/elf.png"></div></li>
-				<li><div><img src="images/logos/idemitsu.png"></div></li>
-				<li><div><img src="images/logos/castrol.png"></div></li>
-				<li><div><img src="images/logos/motul.png"></div></li>
-				<li><div><img src="images/logos/elf.png"></div></li>
-				<li><div><img src="images/logos/idemitsu.png"></div></li>
-				<li><div><img src="images/logos/castrol.png"></div></li>
+				<li><a href="http://www.elf.ua"><div><img src="images/logos/elf.png"></div></a></li>
+				<li><a href="http://www.elf.ua"><div><img src="images/logos/motul.png"></div></a></li>
+				<li><a href="http://www.elf.ua"><div><img src="images/logos/elf.png"></div></a></li>
+				<li><a href="http://www.elf.ua"><div><img src="images/logos/idemitsu.png"></div></a></li>
+				<li><a href="http://www.elf.ua"><div><img src="images/logos/castrol.png"></div></a></li>
+				<li><a href="http://www.elf.ua"><div><img src="images/logos/motul.png"></div></a></li>
+				<li><a href="http://www.elf.ua"><div><img src="images/logos/elf.png"></div></a></li>
+				<li><a href="http://www.elf.ua"><div><img src="images/logos/idemitsu.png"></div></a></li>
+				<li><a href="http://www.elf.ua"><div><img src="images/logos/castrol.png"></div></a></li>
+				<li><a href="http://www.elf.ua"><div><img src="images/logos/elf.png"></div></a></li>
+				<li><a href="http://www.elf.ua"><div><img src="images/logos/idemitsu.png"></div></a></li>
+				<li><a href="http://www.elf.ua"><div><img src="images/logos/castrol.png"></div></a></li>
+				<li><a href="http://www.elf.ua"><div><img src="images/logos/motul.png"></div></a></li>
+				<li><a href="http://www.elf.ua"><div><img src="images/logos/elf.png"></div></a></li>
+				<li><a href="http://www.elf.ua"><div><img src="images/logos/idemitsu.png"></div></a></li>
+				<li><a href="http://www.elf.ua"><div><img src="images/logos/castrol.png"></div></a></li>
 			</ul>
 		</div>
 	</div>
