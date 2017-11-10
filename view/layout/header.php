@@ -29,7 +29,7 @@
                     <li><a href="<?= URL ?>">Главная</a></li>
                     <li><a href="blog">Статьи</a></li>
                     <li><a href="delivery">Доставка и оплата</a></li>
-                    <li><a href="#">Отзывы</a></li>
+                    <li><a href="callback">Отзывы</a></li>
                     <li><a href="contacts">Контакты</a></li>
                 </ul>
 

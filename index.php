@@ -19,7 +19,8 @@ $pages = [
     'personal_room',
     'contacts',
     'remote',
-    'delivery'
+    'delivery',
+    'callback'
 ];
 
 define('URI', $_GET['uri']);
