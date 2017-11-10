@@ -37,11 +37,7 @@
 				<option>10л</option>
 			</select></li>
 			<li><input type="number" class="form-control" value="1"  min="1" ></li>
-			<li><button class="pr_card_btn wth_boot_but confirm_but" onclick="addCart(
-				<?= $_GET['id'].',\''.$_GET['category'].'\'' ?>,
-				$('.pr_description ul li input').val(),function({$("#cart_modal").modal('show');
-      			  setTimeout(function(){$("#cart_modal").modal('hide');}, 1000);};)
-			)">В корзину</button></li>
+			<li><button class="pr_card_btn wth_boot_but confirm_but">В корзину</button></li>
 		</ul>
 	</div>
 
@@ -85,3 +81,21 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+
+	function cartAnimation() {
+		$('#cart_modal').modal('show');
+		setTimeout(function(){
+			$('#cart_modal').modal('hide');
+		}, 1000);
+	}
+
+	$('.pr_description ul li button').click(function() {
+		addCart(
+			<?= $_GET['id'].',\''.$_GET['category'].'\'' ?>,
+			$('.pr_description ul li input').val(),
+			cartAnimation
+		)
+	});
+</script>

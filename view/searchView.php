@@ -142,11 +142,12 @@
     ?>
         <div class="prods_cnt" style="margin-bottom: 50px;">
             <div class="prods_wrapper">
-                <h3 class="title">'.$prod['title'].'<?= "catalog/$category/$img" ?></h3>
+                <h3 class="title"><?= $prod['title'] ?></h3>
                 <div class="prods_img_cnt"><img src="<?= "catalog/$category/$img" ?>"></div>
                 <p>
                 <?php
                     for($j = 0; isset($list_params[$j]); $j++) {
+                        if(empty($prod[$list_params[$j]])) continue;
                         echo $list_params[$j].': '.$prod[$list_params[$j]].'</br>';
                     }
                 ?>
