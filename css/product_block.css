@@ -137,6 +137,7 @@
 	height: 30px;
 	background: #d37730;
 	color: #333;
+	border: none;
 }
 .prods_cnt .prods_bottom button:hover {
 	color: #fafafa;
