@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="../css/personal_room.css">
+<link rel="stylesheet" type="text/css" href="css/personal_room.css">
 
 <div class="container pr_main au btm">
 	<h4 class="main_title tl_mg">Личный кабинет</h4>
