@@ -4,27 +4,32 @@ require_once 'model/categoryModel.php';
 
 class Search {
 
-    private static $MAX_FINDS = 20;
+    private static $max_finds = 12;
+    private static $max_pages = 2;
 
     public static function find($srch, $category, $values = NULL, $sort = NULL, $from = NULL) {
 
         # ---- Строки для базы данных ---- #
 
-        $query_sort = "";
-        $query_srch_title = "";
-        $query_srch_text = "";
-        $query_params = "";
+        $query_sort = '';
+        $query_srch_title = '';
+        $query_srch_text = '';
+        $query_params = '';
 
         # ---- Начальные параметры ---- #
 
-        if(!empty($from) && !empty($from))
-            $query_sort = "ORDER BY `".$sort."` ".$from;
-        elseif(!empty($from) && empty($from))
-            $query_sort = "ORDER BY `rating` ".$from;
-        elseif(empty($from) && !empty($sort))
-            $query_sort = "ORDER BY `".$sort."` ASC";
-        else
-            $query_sort = "ORDER BY `rating` ASC";
+        if(empty($page)) $page = 0;
+        if(empty($sort_by)) $sort_by = 'bought';
+        if(empty($direction)) $direction = 'ASC';
+
+        $from = ($page * self::$max_finds);
+        $to = (($page + self::$max_pages) * self::$max_finds) + self::$max_finds;
+
+        if(!Main::lookSame(['DESC', 'ASC'], $direction))
+            throw new InvalidArgumentException("Invalid direction.");
+
+        if(!Main::lookSame(['bought', 'price', 'id'], $sort_by))
+            throw new InvalidArgumentException("Invalid sort filter.");
 
         # ---- Формирование запроса по спецификациям ---- #
 
@@ -44,7 +49,6 @@ class Search {
             }
         } else {
             $values = [];
-            $params = [];
         }
 
         # ---- Формирование запроса по поисковым словам ---- #
@@ -90,7 +94,7 @@ class Search {
             ";
         }
 
-        return Main::select("
+        $result = Main::select("
             SELECT * FROM  `$category`
             WHERE (
                 ($query_srch_title)
@@ -102,5 +106,13 @@ class Search {
             $params_scan
             $query_sort
         ", TRUE);
+
+        $important_part = array_slice($result, 0, self::$max_finds);
+
+        return [
+            'found' => count($important_part),
+            'search_result' => $important_part,
+            'pages_left' => ceil(count(array_slice($result, self::$max_finds)) / self::$max_finds)
+        ];
     }
 }

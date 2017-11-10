@@ -2,29 +2,18 @@
 <link rel="stylesheet" type="text/css" href="css/slick.css">
 
 <div id="slider_cnt">
-	<div style="background-image: url(images/slider/qwe.jpeg)">
+	<div style="background-image: url(aimages/slider/qwe.jpeg)">
 		<span>Hello</span>
 	</div>
-	<div style="background-image: url(images/slider/asd.jpg)">
+	<div style="background-image: url(aimages/slider/asd.jpg)">
 		<span></span>
 	</div>
-	<div style="background-image: url(images/slider/zxc.jpg)">
+	<div style="background-image: url(aimages/slider/zxc.jpg)">
 		<span></span>
 	</div>
 </div>
 
 <div id="logo_cnt">
-	<!-- <div>
-		<a href="http://www.elf.ua"><img src="images/logos/elf.png"></a>
-		<a href="http://www.castrol.com"><img src="images/logos/castrol.png"></a>
-		<a href="#"><img src="images/logos/total.png"></a>
-		<a href="#"><img src="images/logos/agip.png"></a>
-		<a href="http://idemitsu.com.ua"><img src="images/logos/idemitsu.png"></a>
-		<a href="http://mol-ukraine.com.ua"><img  src="images/logos/mol.png"></a>
-		<a href="https://motulmarket.com.ua"><img src="images/logos/motul.png"></a>
-		<a href="http://www.shell.ua"><img src="images/logos/shell.png"></a>
-		<a href="#"><img src="images/logos/xado.png"></a>
-	</div> -->
 	<div class="img_cnt">
 		<div id="s_lf" style="background-image: url('images/icons/lar.png');"></div>
 		<div id="s_rg" style="background-image: url('images/icons/rar.png');"></div>

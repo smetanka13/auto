@@ -4,9 +4,9 @@
     background: #fafafa;
     position: fixed;
     z-index: 51;
-    box-shadow: 0 0 0 1px silver;
+    border-right: 2px solid #F7931E;
     transition: left 0.3s ease;
-    left: -271px;
+    left: -272px;
 }
 #menu.opened {
     left: 0;
@@ -44,7 +44,7 @@
 }
 
 #menu.opened #close_butt {
-    right: -30px;
+    right: -31px;
 }
 #menu.opened #close_butt::after {
     transform: rotate(-45deg);
@@ -70,4 +70,49 @@
     background: -webkit-linear-gradient(top, #8e8e8e 1%,#6b6b6b 35%,#4f4f4f 64%,#333333 100%);
     background: linear-gradient(to bottom, #8e8e8e 1%,#6b6b6b 35%,#4f4f4f 64%,#333333 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8e8e8e', endColorstr='#333333',GradientType=0 );
+}
+
+#menu .catalog {
+    font-size: 18px;
+    width: 265px;
+    height: auto;
+    padding: 10px 30px;
+}
+
+#menu .catalog .name {
+    color: #333;
+    cursor: pointer;
+    height: 30px;
+    border-bottom: 1px solid #F7931E;
+}
+#menu .catalog .name button {
+    background: none;
+    font-weight: bold;
+    padding: 0;
+    float: right;
+    border: 1px solid #F7931E;
+    width: 30px;
+    height: 30px;
+    font-size: 20px
+}
+#menu .catalog .name svg {
+    transition: transform 0.1s ease;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    fill: #333;
+}
+#menu .catalog .name.opened svg {
+    transform: rotate(45deg);
+}
+#menu .catalog .name:hover svg {
+    fill: #F7931E;
+}
+#menu .catalog .list {
+    display: none;
+}
+#menu .catalog .list div {
+    font-size: 14px;
+    width: 100%;
+    padding: 2px 10px;
 }

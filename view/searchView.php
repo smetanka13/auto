@@ -1,5 +1,7 @@
 <?php
 
+    require 'model/searchModel.php';
+
     define('MAX_FINDS', 20);
 
     $query_sort = "";
@@ -9,39 +11,11 @@
 
     /* ---- Setup values ---- */
 
-    if(isset($_GET['category']))
-        $category = $_GET['category'];
-    else
-        $category = "Масла";
-
-    if(isset($_GET['srch']))
-        $srch = $_GET['srch'];
-    else
-        $srch = "";
-
-    if(isset($_GET['page']))
-        $page = $_GET['page'];
-    else
-        $page = 0;
-
-    if(isset($_GET['sort']))
-        $sort = $_GET['sort'];
-    else
-        $sort = NULL;
-
-    if(isset($_GET['from']))
-        $from = $_GET['from'];
-    else
-        $from = NULL;
-
-    if($from != NULL && $sort != NULL)
-        $query_sort = "ORDER BY `".$sort."` ".$from;
-    elseif($from != NULL && $sort == NULL)
-        $query_sort = "ORDER BY `rating` ".$from;
-    elseif($from == NULL && $sort != NULL)
-        $query_sort = "ORDER BY `".$sort."` ASC";
-    else
-        $query_sort = "ORDER BY `rating` ASC";
+    $page = isset($_GET['page']) ? $_GET['page'] : 0;
+    $page = isset($_GET['srch']) ? $_GET['srch'] : '';
+    $page = isset($_GET['category']) ? $_GET['category'] : 'Масла';
+    $page = isset($_GET['sort']) ? $_GET['sort'] : NULL;
+    $page = isset($_GET['from']) ? $_GET['from'] : NULL;
 
     if(isset($_GET['values'])) {
         $values = json_decode(base64_decode($_GET['values']), TRUE);
@@ -52,15 +26,14 @@
     }
 
 
-    $array = Search::find($srch, $category, $values, $sort, $from);
-
-    $found = count($array);
-    $max_pages = $found / MAX_FINDS;
+    $result = Search::find($srch, $category, $values, $sort, $from);
+    $prods = $result['search_result'];
 ?>
-<link rel="stylesheet" type="text/css" href="css/search_prod_block.css">
-<link rel="stylesheet" type="text/css" href="css/search_categories.css">
+
+<link rel="stylesheet" type="text/css" href="css/search.css">
 <link rel="stylesheet" type="text/css" href="css/product_block.css">
-<div class="top_space">
+
+<!-- <div class="top_space">
     <?php
         for($i = 0; isset($params[$i]) && isset($values[$params[$i]]); $i++) {
 
@@ -104,7 +77,7 @@
         <h3 class="select_name info_block_p " style="margin: 10px">КАТЕГОРИИ</h3>
         <select class="select_points">
             <?php
-                $list_categories = Main::getCategories();
+                $list_categories = Category::getCategories();
                 $list_params = NULL;
                 $list_values = NULL;
                 for($i = 0; isset($list_categories[$i]); $i++) {
@@ -120,19 +93,14 @@
     </div>
     <div class="search_var">
         <?php
-            $list_params = Main::getParams($category);
+            $list_params = Category::getParams($category);
 
             for($j = 0; isset($list_params[$j]); $j++) {
                 echo '
                     <h3 class="search_types">'.$list_params[$j].'<img id="timg'.$j.'" src="images/icons/up_arrow.svg" onclick="openCat('.$j.')"></h3>
                     <ul class="cat_types info_block_p" id="stype'.$j.'">
                 ';
-                $GetValues = $SQL->query("
-                    SELECT `values` FROM `param_values`
-                    WHERE `category_param` = '$category/".$list_params[$j]."'
-                ");
-                $list_values = $GetValues->fetch_assoc();
-                $list_values = explode(';', $list_values['values']);
+                $list_values = Category::getValues($category, $list_params[$j]);
                 for($z = 0; isset($list_values[$z]); $z++) {
                     $svg = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 533.333 533.333" style="enable-background:new 0 0 533.333 533.333;" xml:space="preserve"><g><path d="M516.667,200H333.333V16.667C333.333,7.462,325.871,0,316.667,0h-100C207.462,0,200,7.462,200,16.667V200H16.667   C7.462,200,0,207.462,0,216.667v100c0,9.204,7.462,16.666,16.667,16.666H200v183.334c0,9.204,7.462,16.666,16.667,16.666h100   c9.204,0,16.667-7.462,16.667-16.666V333.333h183.333c9.204,0,16.667-7.462,16.667-16.666v-100   C533.333,207.462,525.871,200,516.667,200z"/></g></svg>';
                     $tmp = $values;
@@ -163,49 +131,44 @@
             }
         ?>
     </div>
-</div>
+</div> -->
 
 
 
 <div class="sprod_desk_bl">
     <?php
-        for($i = 0; isset($array[$i]) && $i < MAX_FINDS; $i++) {
-            $first_img = explode(';', $array[$i]['images']);
-            echo '
-                <div class="prods_cnt" style="margin-bottom: 50px;">
-                    <div class="prods_wrapper">
-                        <h3 class="title">'.$array[$i]['title'].'</h3>
-                        <div class="prods_img_cnt"><img src="catalog/'.$category.'/'.$first_img[0].'"></div>
-                        <p>';
-                for($j = 0; isset($list_params[$j]); $j++) {
-                    echo $list_params[$j].': '.$array[$i][$list_params[$j]].'</br>';
-                }
-                echo '
-                        </p>
-                        <div class="prods_bottom">
-                            <a href="product?category='.$array[$i]['category'].'&id='.$array[$i]['id'].'"><button>КУПИТЬ</button></a>
-                            <h4>'.$array[$i]['price'].' грн.</h4>
-                        </div>
-                    </div>
-                </div>
-            ';
-        }
+        foreach ($prods as $prod) {
+            $img = $prod['image'];
     ?>
+        <div class="prods_cnt" style="margin-bottom: 50px;">
+            <div class="prods_wrapper">
+                <h3 class="title">'.$prod['title'].'<?= "catalog/$category/$img" ?></h3>
+                <div class="prods_img_cnt"><img src="<?= "catalog/$category/$img" ?>"></div>
+                <p>
+                <?php
+                    for($j = 0; isset($list_params[$j]); $j++) {
+                        echo $list_params[$j].': '.$prod[$list_params[$j]].'</br>';
+                    }
+                ?>
+                </p>
+                <div class="prods_bottom">
+                    <a href="<?= 'product?category='.$prod['category'].'&id='.$prod['id'] ?>"><button>КУПИТЬ</button></a>
+                    <h4><?= $prod['price'] ?> грн.</h4>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
 </div>
 
 <script type="text/javascript">
-    function openCat(num)
-    {
+    function openCat(num) {
         var type = $("#stype"+num);
         var img = $("#timg"+num);
 
-        if (type.css("display")==("block") )
-        {
+        if(type.css("display") == "block") {
             type.slideUp(300);
             img.css("transform","scale(1,-1)");
-
         } else {
-
             type.slideDown(300),
             img.css("transform","scale(-1,1)");
         }
