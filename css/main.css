@@ -288,6 +288,32 @@ li > a:focus {
     margin: 10px 25%;
 }
 
+.pass_get {
+
+    float: right;
+}
+
+/*FOR IMG CENTER*/
+.cent_img {
+
+    /*Задать высоту и ширину*/
+    overflow: hidden;
+    float: left;
+    position: relative;
+    display:flex;
+    justify-content: center; /*центрируем элемент по горизонтали */
+    align-items: center;
+}
+
+.cent_img img {
+
+    /*задать минимальную и максимальную высоту*/
+    height: auto;
+    width: auto;
+    /*минимальную или макс ширину*/
+}
+
+
 @media(max-width: 767px) {
 
     .content_cnt {

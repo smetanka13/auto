@@ -64,7 +64,7 @@
 			$params = Category::getParams($product['category']);
 	?>
 	<div class="c_prod_part" data-id="<?= $index ?>">
-		<div class="img-responsive c_prod_img hidden-xs"><img src="<?=
+		<div class="img-responsive c_prod_img hidden-xs cent_img"><img src="<?=
 			!empty($product['image']) ?
 			'catalog/'.$product['category'].'/'.$product['image'] :
 			'images/icons/no_photo.svg'

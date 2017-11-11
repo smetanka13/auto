@@ -20,7 +20,9 @@ $pages = [
     'contacts',
     'remote',
     'delivery',
-    'callback'
+    'callback',
+    'search2',
+    'pick'
 ];
 
 define('URI', $_GET['uri']);
