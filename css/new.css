@@ -1,0 +1,27 @@
+.nw_img_bl {
+
+	margin: 50px 0;
+	width: 100%;
+	height: auto;
+	float: left;
+}
+
+.nw_cnt_img {
+
+	height: 100%; 
+	height: 400px;
+}
+.nw_img {
+
+	width: 90%;
+	margin:auto;
+	height: 90%;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.nw_sm {
+	
+	color: #7f7f7f;
+}

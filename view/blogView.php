@@ -3,7 +3,7 @@
 <div class="wrapper container-fluid blog_back">
 		<div class="blog_main_block container-fluid">
 			<div class="some_info_block_back col-xs-12 col-sm-12 col-md-6 col-lg-6">
-				<div class="some_info_block"><a title="Нажмите , чтобы читать далее" href="#">
+				<div class="some_info_block"><a title="Нажмите , чтобы читать далее" href="new">
 					<div class="some_info_img" ><img src="images/main/1a.jpg"></div>
 					<div class="some_info_txt">
 						<h4>Как наладить контакт с любым человеком</h4>

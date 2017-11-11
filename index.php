@@ -22,7 +22,8 @@ $pages = [
     'delivery',
     'callback',
     'search2',
-    'pick'
+    'pick',
+    'new'
 ];
 
 define('URI', $_GET['uri']);
