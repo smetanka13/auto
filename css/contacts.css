@@ -12,6 +12,11 @@
 	height: auto;
 }
 
+.cont_map {
+
+	float: left;
+}
+
 .cont_map,.cont_cont {
 
 	margin: 50px auto;

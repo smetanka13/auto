@@ -4,7 +4,7 @@
 		<div class="blog_main_block container-fluid">
 			<div class="some_info_block_back col-xs-12 col-sm-12 col-md-6 col-lg-6">
 				<div class="some_info_block"><a title="Нажмите , чтобы читать далее" href="new">
-					<div class="some_info_img" ><img src="images/main/1a.jpg"></div>
+					<div class="some_info_img cent_img"><img src="images/main/1a.jpg"></div>
 					<div class="some_info_txt">
 						<h4>Как наладить контакт с любым человеком</h4>
 						<small>Рамещено 28.08.2017</small>
@@ -19,7 +19,7 @@
 
 			<div class="some_info_block_back col-xs-12 col-sm-12 col-md-6 col-lg-6">
 				<div class="some_info_block"><a title="Нажмите , чтобы читать далее" href="#">
-					<div class="some_info_img"><img src="images/main/2a.jpg"></div>
+					<div class="some_info_img cent_img"><img src="images/main/2a.jpg"></div>
 					<div class="some_info_txt">
 						<h4>Закон показательности мелочей</h4>
 						<small>Рамещено 28.08.2017</small>
@@ -32,7 +32,7 @@
 
 			<div class="some_info_block_back col-xs-12 col-sm-12 col-md-6 col-lg-6">
 				<div class="some_info_block"><a title="Нажмите , чтобы читать далее" href="#">
-					<div class="some_info_img" ><img src="images/main/3a.jpg"></div>
+					<div class="some_info_img cent_img"><img src="images/main/3a.jpg"></div>
 					<div class="some_info_txt">
 						<h4>НИКТО. НИКОМУ. НИЧЕГО. НЕ ДОЛЖЕН </h4>
 						<small>Рамещено 28.08.2017</small>
@@ -46,7 +46,7 @@
 
 			<div class="some_info_block_back col-xs-12 col-sm-12 col-md-6 col-lg-6">
 				<div class="some_info_block"><a title="Нажмите , чтобы читать далее" href="#">
-					<div class="some_info_img"><img src="images/main/4a.jpg"></div>
+					<div class="some_info_img cent_img"><img src="images/main/4a.jpg"></div>
 					<div class="some_info_txt">
 						<h4>Эмоциональный интеллект: учимся общаться с невыносимыми людьми </h4>
 						<small>Рамещено 28.08.2017</small>
