@@ -160,21 +160,12 @@
                         <h4 class="modal-title main_title">Регистрация</h4>
                 </div>
                     <div class="modal-body">
-                    <form class="enter_reg_place" method="post" action="cgi\reg_mail.php">
                       <div class="form-group">
                         <label for="inputEmail" class="enter_reg_lable">Email:</label>
                         <input type="email" class="form-control" id="inputEmail" name="mail" placeholder="Введите email">
                       </div>
                       <div class="form-group">
                         <label for="inputText" class="enter_reg_lable">Логин:</label>
-                        <input type="text" class="form-control" id="inputLogin" name="login" placeholder="Введите логин">
-                      </div>
-                      <div class="form-group">
-                        <label for="inputText" class="enter_reg_lable">ФИО:</label>
-                        <input type="text" class="form-control" id="" name="login" placeholder="Введите логин">
-                      </div>
-                      <div class="form-group">
-                        <label for="inputText" class="enter_reg_lable">Номер телефона:</label>
                         <input type="text" class="form-control" id="inputLogin" name="login" placeholder="Введите логин">
                       </div>
                       <div class="form-group">
@@ -185,11 +176,18 @@
                         <label for="inputPassword" class="enter_reg_lable">Подтвердите пароль:</label>
                         <input type="password" class="form-control" id="confirmPassword" name="cpass" placeholder="Введите пароль">
                       </div>
-                      
+
                         <input type="text" style="display: none" name="role" value="14">
 
-                      <button type="submit" class="btn confirm_but">Зарегистрироваться</button>
-                  </form>
+                      <button class="btn confirm_but" onclick="ajaxController({
+                          model: 'user',
+                          method: 'registrate',
+                          callback: foo,
+                          login: $('#inputLogin').val(),
+                          email: $('#inputEmail').val(),
+                          pass: $('#inputPassword').val(),
+                          confirm: $('#confirmPassword').val()
+                      })">Зарегистрироваться</button>
                 </div>
             </div>
         </div>
@@ -212,3 +210,9 @@
             </div>
         </div>
     </div>
+
+<script type="text/javascript">
+    function foo() {
+        console.log($('#inputPassword'));
+    }
+</script>

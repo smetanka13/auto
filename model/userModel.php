@@ -9,76 +9,73 @@ class User {
     public static function registrate($login, $email, $pass, $confirm) {
 
         if(!preg_match("/^([a-z0-9_\.\-]{1,20})@([a-z0-9\.\-]{1,20})\.([a-z]{2,4})$/is", $email))
-            throw new Exception("Invalid email.");
+            throw new Exception("Неверный формат email.");
 
         if(Main::select("
         	SELECT * FROM `user`
         	WHERE `email` = '$email'
             LIMIT 1
         "))
-            throw new InvalidArgumentException("Email is already busy.");
+            throw new InvalidArgumentException("Этот email уже занят.");
 
-        if(strlen($pass) < 8)
-            throw new InvalidArgumentException("Length of the password must be more then 8.");
+        if(strlen($pass) <= 4)
+            throw new InvalidArgumentException("Длинна пароля должна первышать 4 символа.");
         if(strlen($pass) > 32)
-            throw new InvalidArgumentException("Length of the password must be less then 32.");
+            throw new InvalidArgumentException("Длинна пароля не должна первышать 32 символа.");
         if (preg_match("/'\{\}\[\]\(\)\`\"/", $pass))
-            throw new InvalidArgumentException("Some symbols are not allowed.");
+            throw new InvalidArgumentException("Некоторые символы в пароле не позволены.");
 
         if (preg_match("/'\{\}\[\]\(\)\`\"/", $login))
-            throw new InvalidArgumentException("Some symbols are not allowed.");
-        if(strlen($pass) < 8)
-            throw new InvalidArgumentException("Length of the password must be more then 8.");
-        if(strlen($pass) > 32)
-            throw new InvalidArgumentException("Length of the password must be less then 32.");
+            throw new InvalidArgumentException("Некоторые символы в логине не позволены.");
+        if(strlen($login) <= 6)
+            throw new InvalidArgumentException("Длинна пароля должна первышать 6 символа.");
+        if(strlen($login) > 32)
+            throw new InvalidArgumentException("Длинна логина не должна первышать 32 символа.");
 
         if($confirm != $pass)
-            throw new InvalidArgumentException("Repeat password correctly.");
+            throw new InvalidArgumentException("Повторите пароль верно.");
         if(empty($confirm))
-            throw new InvalidArgumentException("Repeat password.");
+            throw new InvalidArgumentException("Повторите пароль.");
 
-        if(empty($error_arr)) {
+        Main::query("
+            INSERT INTO `user` (
+                `login`, `email`, `pass`
+            ) VALUES (
+                '$login', '$email', '".self::hashPass($login, $pass)."'
+            )
+        ");
 
+        $key = Main::generateKey();
+        try {
             Main::query("
-        		INSERT INTO `user` (
-        			`login`, `email`, `pass`
-        		) VALUES (
-        			'$login', '$email', '".self::hashPass($login, $pass)."'
-        		)
-        	");
+                INSERT INTO `verify` (
+                    `email`, `key`
+                )
+                VALUES (
+                    '$email', '$key'
+                )
+            ");
+        } catch (RuntimeException $e) {
+            Main::query("
+                DELETE FROM `user`
+                WHERE `email` = '$email';
+            ");
+            throw new RuntimeException($e->getMessage());
+        }
 
-            $key = Main::generateKey();
-            try {
-                Main::query("
-                    INSERT INTO `verify` (
-                        `email`, `key`
-                    )
-                    VALUES (
-                        '$email', '$key'
-                    )
-                ");
-            } catch (RuntimeException $e) {
-                Main::query("
-                    DELETE FROM `user`
-                    WHERE `email` = '$email';
-                ");
-                throw new RuntimeException($e->getMessage());
-            }
-
-            $subject = "[".NAME."] registration.";
-            $headers = 'From: '.NAME. "\r\n";
-            $message = "To activate your account enter this link: ".URL."/remote?model=user&method=verify&key=".$key;
-            if(!mail($email, $subject, $message, $headers)) {
-                Main::query("
-                    DELETE FROM `user`
-                    WHERE `email` = '$email'
-                ");
-                Main::query("
-                    DELETE FROM `verify`
-                    WHERE `email` = '$email'
-                ");
-                throw new RuntimeException('Error sending mail.');
-            }
+        $subject = "[".NAME."] Регистрация.";
+        $headers = 'From: '.NAME. "\r\n";
+        $message = "Что бы активировать ваш аккаунт пройдите по ссылке: ".URL."/remote?model=user&method=verify&key=".$key;
+        if(!mail($email, $subject, $message, $headers)) {
+            Main::query("
+                DELETE FROM `user`
+                WHERE `email` = '$email'
+            ");
+            Main::query("
+                DELETE FROM `verify`
+                WHERE `email` = '$email'
+            ");
+            throw new RuntimeException('Ошибка отсылки письма.');
         }
     }
 
@@ -115,13 +112,13 @@ class User {
 
     public static function saveLogged($login, $pass) {
         if(!self::login($login, $pass, TRUE))
-            throw new Exception("Wrong login or password.");
+            throw new InvalidArgumentException("Неверный логин или пароль.");
 
         if(!(
             setcookie('login', self::get('login'), 0, "/") &&
     		setcookie('pass', self::get('pass'), 0, "/")
         )) {
-    		throw new RuntimeException("Error setting cookies.");
+    		throw new RuntimeException("Ошибка создания куков.");
     	}
     }
 

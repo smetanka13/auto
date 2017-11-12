@@ -6,7 +6,7 @@ $permitted_actions = [
 	'User::saveLogged',
 	'User::verifyEmail',
 	'User::registrate',
-	// ADMIN 
+	// ADMIN
 	'Product::get',
 	'Product::update',
 	'Product::upload',
