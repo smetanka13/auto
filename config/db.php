@@ -1,4 +1,4 @@
 <?php
 
-$DB = mysqli_connect('localhost', 'root', 'Thuglife200Thuglife200Thuglife200', 'autoshop');
+$DB = mysqli_connect('localhost', 'root', '', 'autoshop');
 mysqli_query($DB, "SET NAMES 'utf8'");

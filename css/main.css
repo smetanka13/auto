@@ -192,8 +192,11 @@ li > a:focus {
 
 .navbar-collapse {
 
-    max-height: 100vh !important;
+    /*max-height: 100vh !important;*/
     overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    margin:0 !important;
 }
 
 .navbar {
