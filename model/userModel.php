@@ -65,7 +65,7 @@ class User {
 
         $subject = "[".NAME."] Регистрация.";
         $headers = 'From: '.NAME. "\r\n";
-        $message = "Что бы активировать ваш аккаунт пройдите по ссылке: ".URL."/remote?model=user&method=verify&key=".$key;
+        $message = "Что бы активировать ваш аккаунт пройдите по ссылке: ".URL."/remote?model=user&method=verifyEmail&key=".$key;
         if(!mail($email, $subject, $message, $headers)) {
             Main::query("
                 DELETE FROM `user`
@@ -82,7 +82,7 @@ class User {
     public static function verifyEmail($key) {
 
         $email = Main::select("
-        	SELECT `email` FROM `confirm`
+        	SELECT `email` FROM `verify`
         	WHERE `key` = '$key'
         	LIMIT 1
         ");
@@ -99,14 +99,14 @@ class User {
         		LIMIT 1
         	");
         	Main::query("
-        		DELETE FROM `confirm`
+        		DELETE FROM `verify`
         		WHERE `key` = '$key'
         		LIMIT 1
         	");
 
-        	header("Location: ".URL."?message=Вы успешно зарегистрировались.");
+        	header("Location: ".URL."?msg=Вы успешно зарегистрировались.");
         } else {
-        	header("Location: ".URL."?message=Возникла проблема, попробуйте позже.");
+        	header("Location: ".URL."?msg=Возникла проблема, попробуйте позже.");
         }
     }
 
