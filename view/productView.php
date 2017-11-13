@@ -37,7 +37,7 @@
 				<option>10л</option>
 			</select></li>
 			<li><input type="number" class="form-control" value="1"  min="1" ></li>
-			<li><button class="pr_card_btn wth_boot_but confirm_but">В корзину</button></li>
+			<li><button onclick="cartAnimation()" class="pr_card_btn wth_boot_but confirm_but">В корзину</button></li>
 		</ul>
 	</div>
 
@@ -72,7 +72,7 @@
 <?php } ?>
 
 <!-- FOR CART MODAL -->
-<div id="about_modal" class="modal fade">
+<div id="cart_modal" class="modal fade">
   <div class="modal-dialog">
     <div class="modal-content siglog_window">
       <div class="modal-header">
