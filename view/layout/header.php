@@ -12,12 +12,12 @@
         </div>
         <!-- nav_menu -->
         <div class="collapse navbar-collapse color_head" id="header_menu">
-            <a href="#"><div class="oil_parce"><span>ПОДБОР МАСЛА</span><img src="images/icons/drop.svg"></div></a>
+            <a href="pick"><div class="oil_parce"><span>ПОДБОР МАСЛА</span><img src="images/icons/drop.svg"></div></a>
 
                 <form class="visible-xs xs_form">
                   <div class="form-group">
                     <input type="search" class="form-control"  placeholder="Нажмите для поиска">
-                    <img src="images/icons/search.svg">
+                    <a href="search2"><img src="images/icons/search.svg"></a>
                   </div>
                   <div class="form-group tel">
                     <input type="tel" class="form-control"  placeholder="Перезвонить">
@@ -68,6 +68,8 @@
                         <div class="reglog"  data-toggle='modal' data-target='#signin_modal'>
                             <img src="images/icons/user.svg">
                             <span>Вход/Регистрация</span>
+                            <!-- после авторизации -->
+                            <!-- <a href="personal_room"><span>Личный кабинет</span></a> -->
                         </div>
                     </div>
                 </div>
@@ -86,7 +88,7 @@
             <form>
               <div class="form-group">
                 <input type="search" class="form-control"  placeholder="Нажмите для поиска">
-                <img src="images/icons/search.svg">
+                <a href="search2"><img src="images/icons/search.svg"></a>
               </div>
             </form>
         </div>
