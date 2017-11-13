@@ -85,6 +85,7 @@
 <script type="text/javascript">
 
 	function cartAnimation() {
+		alert();
 		$('#cart_modal').modal('show');
 		setTimeout(function(){
 			$('#cart_modal').modal('hide');
