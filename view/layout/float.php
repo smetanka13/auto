@@ -185,7 +185,7 @@
                           callback: foo,
                           login: $('#inputLogin').val(),
                           email: $('#inputEmail').val(),
-                          pass: $('#inputPassword').val(),
+                          pass: $('#regist_modal #inputPassword').val(),
                           confirm: $('#confirmPassword').val()
                       })">Зарегистрироваться</button>
                 </div>
@@ -213,6 +213,6 @@
 
 <script type="text/javascript">
     function foo() {
-        console.log($('#inputPassword'));
+        
     }
 </script>

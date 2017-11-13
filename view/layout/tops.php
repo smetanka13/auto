@@ -112,7 +112,7 @@
                             ?>
                         </p>
                         <div class="prods_bottom">
-                            <a href="product_card?category=<?= $product['category'] ?>&id=<?= $product['id'] ?>"><button>КУПИТЬ</button></a>
+                            <a href="product?category=<?= $product['category'] ?>&id=<?= $product['id'] ?>"><button>КУПИТЬ</button></a>
                             <h4><?= $product['price']?> &euro;</h4>
                         </div>
                     </div>

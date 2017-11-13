@@ -16,8 +16,8 @@
 
                 <form class="visible-xs xs_form">
                   <div class="form-group">
-                    <input type="search" class="form-control"  placeholder="Нажмите для поиска">
-                    <a href="search2"><img src="images/icons/search.svg"></a>
+                    <input type="search" value="<?= isset($_GET['srch']) ? $_GET['srch'] : '' ?>" class="form-control"  placeholder="Нажмите для поиска">
+                    <img src="images/icons/search.svg">
                   </div>
                   <div class="form-group tel">
                     <input type="tel" class="form-control"  placeholder="Перезвонить">
@@ -76,7 +76,7 @@
                 <a href="<?= URL ?>"><div class="logo"></div></a>
             </div>
             <ul class="nav navbar-nav nav_bar_pages2">
-                <li><a href="#">Масла</a></li>
+                <li><a href="search2?category=Масла">Масла</a></li>
                 <li><a href="#">Фильтры</a></li>
                 <li><a href="#">Ремни</a></li>
                 <li><a href="#">Присадки</a></li>

@@ -2,20 +2,13 @@
 
     require 'model/searchModel.php';
 
-    define('MAX_FINDS', 20);
-
-    $query_sort = "";
-    $query_srch_title = "";
-    $query_srch_text = "";
-    $query_params = "";
-
     /* ---- Setup values ---- */
 
     $page = isset($_GET['page']) ? $_GET['page'] : 0;
-    $page = isset($_GET['srch']) ? $_GET['srch'] : '';
-    $page = isset($_GET['category']) ? $_GET['category'] : 'Масла';
-    $page = isset($_GET['sort']) ? $_GET['sort'] : NULL;
-    $page = isset($_GET['from']) ? $_GET['from'] : NULL;
+    $srch = isset($_GET['srch']) ? $_GET['srch'] : '';
+    $category = isset($_GET['category']) ? $_GET['category'] : 'Масла';
+    $sort = isset($_GET['sort']) ? $_GET['sort'] : NULL;
+    $from = isset($_GET['from']) ? $_GET['from'] : NULL;
 
     if(isset($_GET['values'])) {
         $values = json_decode(base64_decode($_GET['values']), TRUE);

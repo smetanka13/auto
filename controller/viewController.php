@@ -1,8 +1,8 @@
 <?php
-	require_once "config/globals.php";
-	require_once "config/db.php";
-	require_once "model/mainModel.php";
-	require_once "model/categoryModel.php";
+	require_once 'config/globals.php';
+	require_once 'config/db.php';
+	require_once 'model/mainModel.php';
+	require_once 'model/categoryModel.php';
 	require_once 'model/userModel.php';
 
 	$private_view = [
