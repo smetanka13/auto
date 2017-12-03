@@ -37,10 +37,8 @@
 			</div>
 			<div class="modal-body">
 				<div class="main_text">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat..</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat..</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>	
+					<p><big>Fox Motors</big> - это успешная компания, специализирующаяся на продаже и поставках всего спектра смазочных материалов и технических жидкостей для любых легковых автомобилей, микроавтобусов, грузовиков, карьерной, дорожной, сельскохозяйственной техники, двухтактных двигателей, мотоциклов, садового оборудования и автохимию</p>
+					<a href="contacts"><div class="wth_boot_but confirm_but">Подробнее о нас</div></a>
 				</div>
 			</div>
 		</div>

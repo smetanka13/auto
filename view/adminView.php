@@ -1,5 +1,6 @@
 <?php require_once 'model/categoryModel.php'; ?>
 <link rel="stylesheet" type="text/css" href="css/admin.css">
+<link rel="stylesheet" type="text/css" href="css/personal_room.css">
 <script>
     function callback(data) {
         if(data.status == true) {
@@ -193,6 +194,68 @@
 </script>
 <div class="container" style="padding-top: 100px;">
     <div class="row">
+         <h4 class="pr_titles_cat">Поступающие заказы</h4>
+          <p>Тут будут отображаться все заказы.</p>
+            <div class="tb_cnt mbt">
+                <table class="table tb_buy table-bordered">
+                    <thead>
+                        <tr>
+                        <th>ФИО клиента</th>
+                        <th>Контактный телефон</th>
+                        <th>Код товара</th>
+                        <th>Количество</th>
+                        <th>Сумма</th>
+                        <th>Способ доставки</th>
+                        <th>Комментарий к заказу</th>
+                        <th>Дата</th>
+                        <th>Подтверждение заказа</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Фионов Юрий Сергеевич</td>
+                            <td>0939463704</td>
+                            <td><a href="#">67839992</td></a>
+                            <td>10 шт</td>
+                            <td>200000 грн</td>
+                            <td>Самовывоз</td>
+                            <td>Позвонить после принятия заказа</td>
+                            <td>20.10.2013</td>
+                            <td class="order">
+                                <div class="wth_boot_but btn-success ord_but">Подтвердить заказ</div>
+                                <div class="cf_ord">Заказ принят</div>
+                            </td>
+                        <tr>
+                            <td>Фионов Юрий Сергеевич</td>
+                            <td>0939463704</td>
+                            <td><a href="#">67839992</td></a>
+                            <td>10 шт</td>
+                            <td>200000 грн</td>
+                            <td>Самовывоз</td>
+                            <td>Позвонить после принятия заказа</td>
+                            <td>20.10.2013</td>
+                            <td class="order">
+                                <div class="wth_boot_but btn-success ord_but">Подтвердить заказ</div>
+                                <div class="cf_ord">Заказ принят</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Фионов Юрий Сергеевич</td>
+                            <td>0939463704</td>
+                            <td><a href="#">67839992</td></a>
+                            <td>10 шт</td>
+                            <td>200000 грн</td>
+                            <td>Самовывоз</td>
+                            <td>Позвонить после принятия заказа</td>
+                            <td>20.10.2013</td>
+                            <td class="order">
+                                <div class="wth_boot_but btn-success ord_but">Подтвердить заказ</div>
+                                <div class="cf_ord">Заказ принят</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         <div id="excel" class="col-md-12 cnt_all">
             <h1 class="main_title">Excel загрузка</h1>
             <input type="file" id="file" multiple="multiple">
@@ -284,3 +347,10 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $('.order').click(function(){
+        $('.ord_but').fadeOut();
+        $('.cf_ord').fadeIn();
+        $('.order').addClass('success');
+    });
+</script>

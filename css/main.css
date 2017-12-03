@@ -210,7 +210,9 @@ li > a:focus {
     color: #fafafa !important;
     border-radius: 5px 5px 0 0 ;
 }
-
+#call_back {
+    cursor: pointer;
+}
 /*.nav-tabs {
     border-bottom: none !important;
 }*/
@@ -219,6 +221,10 @@ li > a:focus {
 .au {
 
     margin-top: 50px;
+}
+
+.mbt {
+    margin-bottom: 50px;
 }
 
 /*FOR ANIMATE CSS*/
@@ -294,6 +300,7 @@ li > a:focus {
 .pass_get {
 
     float: right;
+    cursor: pointer;
 }
 
 /*FOR IMG CENTER*/

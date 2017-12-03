@@ -48,13 +48,14 @@
 			<div class="form-group">
 			  <textarea class="form-control" rows="5" placeholder="Комментарий к заказу"></textarea>
 			</div>
-			<button type="submit" class="wth_boot_but confirm_but">Оформить заказ</button>
+			<div type="submit" class="wth_boot_but confirm_but ord_maker">Оформить заказ</div>
 		</form>
 	</div>
 </div>
 
 <!-- БЛОК С ТОВАРАМИ -->
 <div class="cart_prod col-xs-12 col-sm-7 col-md-8 col-lg-8">
+	<h4 class="main_title au">На данный момент в корзине нет товаров!</h4>
 	<?php
 
 		$cookie = json_decode($_COOKIE['cart'], TRUE);
@@ -107,8 +108,27 @@
 	<?php } ?>
 </div>
 
+<!-- FOR ORDER MODAL -->
+<div id="order_modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content siglog_window">
+      <div class="modal-header">
+        <h4 class="modal-title main_title">Ваш заказ принят ! <br>Подробнее вы можете просмотреть в личном кабинете !</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script type="text/javascript">
 	function deleteProduct(index) {
 		$('.c_prod_part[data-id='+index+']').remove();
 	}
+
+	// ДЛЯ ОПОВЕЩЕНИЯ О ПРИНЯТИИ ЗАКАЗА
+	$('.ord_maker').click(function(){
+		$('#order_modal').modal('show');
+		setTimeout(function(){
+			$('#order_modal').modal('hide');
+		}, 2000);
+	});
 </script>

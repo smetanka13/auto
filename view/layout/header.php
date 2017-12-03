@@ -50,24 +50,25 @@
                         <table class="table">
                           <tbody>
                             <tr>
-                              <td><img src="images/icons/phone.svg">+38 (093) 9463704</td>
-                              <td><img src="images/icons/time_work.svg">Пн-Сб 10.00-19.00,Вс Выходной</td>
+                              <td><img src="images/icons/phone.svg">+38 (067) 6973333</td>
+                              <td><img src="images/icons/time_work.svg">с 9:00 до 17:00</td>
                             </tr>
                             <tr>
-                              <td>+38 (093) 9463704</td>
+                              <td>+38 (067) 6973333</td>
                               <td><img src="images/icons/address.svg">г.Одесса</td>
                             </tr>
                             <tr>
                               <td><img id="call_back" src="images/icons/call_back.svg"><input type="tel" class="form-control" id="callback" placeholder="Перезвонить"></td>
-                              <td><img src="images/icons/sms.svg">Обратная связь</td>
+                              <td><img src="images/icons/sms.svg">Авторынок Куяльник</td>
                             </tr>
                           </tbody>
                         </table>
                     </div>
                     <div class="sec_inf_part">
-                        <div class="reglog"  data-toggle='modal' data-target='#signin_modal'>
+                        <div class="reglog" >
                             <img src="images/icons/user.svg">
-                            <span>Вход/Регистрация</span>
+                           <!--  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+                            <span data-toggle='modal' data-target='#signin_modal'>Вход/Регистрация</span>
                             <!-- после авторизации -->
                             <!-- <a href="personal_room"><span>Личный кабинет</span></a> -->
                         </div>
@@ -94,6 +95,17 @@
         </div>
     </div><!-- /.container-fluid -->
 </nav>
+
+<!-- FOR CALLBACK MODAL -->
+<div id="callback_modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content siglog_window">
+      <div class="modal-header">
+        <h4 class="modal-title main_title">Мы перезвоним Вам в течении 000 минут !</h4>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- FOR EMBLEM ANIMATE -->
 <script type="text/javascript">
@@ -125,6 +137,14 @@
                     $('#content').css('padding-top','66px');
                 }
             }
+        });
+
+        // ДЛЯ ОПОВЕЩЕНИЯ ОБ ОБРАТНОЙ СВЯЗИ 
+        $('#call_back').click(function(){
+            $('#callback_modal').modal('show');
+            setTimeout(function(){
+                $('#callback_modal').modal('hide');
+            }, 1000);
         });
     });
 </script>

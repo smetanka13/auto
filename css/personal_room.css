@@ -94,9 +94,12 @@
 	float: right;
 }
 
-.pr_edit_acc button {
+.pr_edit_acc div {
 
 	margin-bottom: 20px;
+}
+.ed_pr_btt {
+	width: 100%;
 }
 
 .pr_edit_acc span {
