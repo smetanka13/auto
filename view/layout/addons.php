@@ -80,7 +80,7 @@
 			processData: false,
 			error: function() {
 				ajaxLoad(false);
-				ajaxError('Server error.');
+				ajaxError('Ошибка сервера.');
 			},
 			success: function(json) {
 				console.log(json);

@@ -2,13 +2,13 @@
 <link rel="stylesheet" type="text/css" href="css/slick.css">
 
 <div id="slider_cnt">
-	<div style="background-image: url(aimages/slider/qwe.jpeg)">
+	<div style="background-image: url(images/slider/qwe.jpeg)">
 		<span>Hello</span>
 	</div>
-	<div style="background-image: url(aimages/slider/asd.jpg)">
+	<div style="background-image: url(images/slider/asd.jpg)">
 		<span></span>
 	</div>
-	<div style="background-image: url(aimages/slider/zxc.jpg)">
+	<div style="background-image: url(images/slider/zxc.jpg)">
 		<span></span>
 	</div>
 </div>

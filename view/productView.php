@@ -37,7 +37,7 @@
 				<option>10л</option>
 			</select></li>
 			<li><input type="number" class="form-control" value="1"  min="1" ></li>
-			<li><button onclick="cartAnimation()" class="pr_card_btn wth_boot_but confirm_but">В корзину</button></li>
+			<li><button class="pr_card_btn wth_boot_but confirm_but">В корзину</button></li>
 		</ul>
 	</div>
 
@@ -85,7 +85,6 @@
 <script type="text/javascript">
 
 	function cartAnimation() {
-		alert();
 		$('#cart_modal').modal('show');
 		setTimeout(function(){
 			$('#cart_modal').modal('hide');

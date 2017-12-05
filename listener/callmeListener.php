@@ -11,5 +11,5 @@ if(!empty($_POST['phone'])) {
     ");
 
 } else {
-    $JSON->write('phone', 'Укажите ваш номиер телефона.');
+    $JSON->write('phone', 'Укажите ваш номер телефона.');
 }

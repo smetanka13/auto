@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-=======
-<link rel="stylesheet" type="text/css" href="css/search.css">
-<link rel="stylesheet" type="text/css" href="css/cart.css">
-
->>>>>>> 5216e18fb6934f95cd1da8c42d9e4e813c26ea4c
 <?php
 
     require 'model/searchModel.php';
@@ -31,12 +25,9 @@
 
 <link rel="stylesheet" type="text/css" href="css/cart.css">
 <link rel="stylesheet" type="text/css" href="css/product_block.css">
+<link rel="stylesheet" type="text/css" href="css/search.css">
 
 <div class="reg_prod col-xs-12 col-sm-5 col-md-4 col-lg-4">
-<<<<<<< HEAD
-	<div class="reg_prod_cnt">
-
-=======
 	<div class="reg_prod_cnt" id="menu_f">
 		<?php
         $categories = Category::getCategories();
@@ -73,7 +64,6 @@
     </div>
 
     <!-- <?php } ?> -->
->>>>>>> 5216e18fb6934f95cd1da8c42d9e4e813c26ea4c
 	</div>
 </div>
 
@@ -119,4 +109,3 @@
         });
     });
 </script>
-

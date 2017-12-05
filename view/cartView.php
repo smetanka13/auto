@@ -1,55 +1,65 @@
-<link rel="stylesheet" type="text/css" href="css/cart.css">
-
 <?php
 	require_once 'model/categoryModel.php';
 	require_once 'model/productModel.php';
 ?>
 
+<link rel="stylesheet" type="text/css" href="css/cart.css">
+
 <div class="reg_prod col-xs-12 col-sm-5 col-md-4 col-lg-4">
 	<div class="reg_prod_cnt">
 		<h4 class="main_title">Оформление заказа</h4>
-		<form>
-			<div class="form-group">
-			  <select class="form-control">
-			    <option>Выберите способ оплаты</option>
-			    <option>1</option>
-			    <option>2</option>
-			    <option>3</option>
-			  </select>
-			</div>
-			<div class="form-group">
-			  <select class="form-control">
-			    <option>Выберите способ доставки</option>
-			    <option>1</option>
-			    <option>2</option>
-			    <option>3</option>
-			  </select>
-			</div>
-			<div class="form-group">
-			    <label>ФИО:</label>
-			    <input value="<?php if(User::logged()) echo User::get("public") ?>" type="text" class="form-control" placeholder="Введите ФИО">
-			</div>
-			<div class="form-group">
-			    <label>Город:</label>
-			    <input type="text" class="form-control" placeholder="Введите город">
-			</div>
-			<div class="form-group">
-			    <label>Адрес:</label>
-			    <input type="text" class="form-control" placeholder="Введите адрес">
-			</div>
-			<div class="form-group">
-			    <label>Email:</label>
-			    <input value="<?php if(User::logged()) echo User::get("email") ?>" type="email" class="form-control" placeholder="Введите email">
-			</div>
-			<div class="form-group">
-			    <label>Телефон:</label>
-			    <input value="<?php if(User::logged()) echo User::get("phone") ?>" type="tel" class="form-control" placeholder="Введите телефон">
-			</div>
-			<div class="form-group">
-			  <textarea class="form-control" rows="5" placeholder="Комментарий к заказу"></textarea>
-			</div>
-			<button type="submit" class="wth_boot_but confirm_but">Оформить заказ</button>
-		</form>
+		<div class="form-group">
+		  <select class="form-control">
+		    <option>Выберите способ оплаты</option>
+		    <option>1</option>
+		    <option>2</option>
+		    <option>3</option>
+		  </select>
+		</div>
+		<div class="form-group">
+		  <select class="form-control">
+		    <option>Выберите способ доставки</option>
+		    <option>1</option>
+		    <option>2</option>
+		    <option>3</option>
+		  </select>
+		</div>
+		<div class="form-group">
+		    <label>ФИО:</label>
+		    <input value="<?php if(User::logged()) echo User::get("public") ?>" type="text" class="form-control" placeholder="Введите ФИО">
+		</div>
+		<div class="form-group">
+		    <label>Город:</label>
+		    <input type="text" class="form-control" placeholder="Введите город">
+		</div>
+		<div class="form-group">
+		    <label>Адрес:</label>
+		    <input type="text" class="form-control" placeholder="Введите адрес">
+		</div>
+		<div class="form-group">
+		    <label>Email:</label>
+		    <input value="<?php if(User::logged()) echo User::get("email") ?>" type="email" class="form-control" placeholder="Введите email">
+		</div>
+		<div class="form-group">
+		    <label>Телефон:</label>
+		    <input value="<?php if(User::logged()) echo User::get("phone") ?>" type="tel" class="form-control" placeholder="Введите телефон">
+		</div>
+		<div class="form-group">
+		  <textarea class="form-control" rows="5" placeholder="Комментарий к заказу"></textarea>
+		</div>
+		<button class="wth_boot_but confirm_but" onclick="ajaxController({
+			model: 'order',
+			method: 'add',
+			callback: callback,
+			pay_way: $('...').val(),
+			delivery_way: ,
+			public: ,
+			city: ,
+			address: ,
+			email: ,
+			phone: ,
+			text:
+		})">Оформить заказ</button>
 	</div>
 </div>
 
@@ -70,7 +80,7 @@
 			'images/icons/no_photo.svg'
 		?>"></div>
 		<div class="c_prod_txt">
-			<a href="#"><h4 class="main_title">Xenum GPR kkkk 3 33</h4></a>
+			<h4 class="main_title"><?= $product['title'] ?></h4>
 			<table class="table">
 				<tbody>
 
@@ -98,7 +108,7 @@
 		</div>
 		<div class="c_price">
 			<p class="main_title"><?= $product['price'] ?> &euro;</p>
-			<a href="product_card?category=<?= $product['category'] ?>&id=<?= $product['id'] ?>">
+			<a href="product?category=<?= $product['category'] ?>&id=<?= $product['id'] ?>">
 				<button class="wth_boot_but confirm_but">Подробнее</button>
 			</a>
 		</div>
