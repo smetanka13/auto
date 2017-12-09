@@ -86,5 +86,14 @@
 
 				n=4;
 			}
+</script>
+<!-- <script type="text/javascript">
+	$(document).ready(function(){
+		$('#product_block').addClass("hidden_css").viewportChecker({
+		  classToAdd: 'visible_css animated fadeInDown',
+	      classToRemove: 'hidden_css',
+	      offset: [10%],
+	      repeat: true
 		});
-	</script>
+	});
+</script> -->

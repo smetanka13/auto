@@ -8,63 +8,66 @@
 <div class="reg_prod col-xs-12 col-sm-5 col-md-4 col-lg-4">
 	<div class="reg_prod_cnt">
 		<h4 class="main_title">Оформление заказа</h4>
-		<div class="form-group">
-		  <select class="form-control">
-		    <option>Выберите способ оплаты</option>
-		    <option>1</option>
-		    <option>2</option>
-		    <option>3</option>
-		  </select>
-		</div>
-		<div class="form-group">
-		  <select class="form-control">
-		    <option>Выберите способ доставки</option>
-		    <option>1</option>
-		    <option>2</option>
-		    <option>3</option>
-		  </select>
-		</div>
-		<div class="form-group">
-		    <label>ФИО:</label>
-		    <input value="<?php if(User::logged()) echo User::get("public") ?>" type="text" class="form-control" placeholder="Введите ФИО">
-		</div>
-		<div class="form-group">
-		    <label>Город:</label>
-		    <input type="text" class="form-control" placeholder="Введите город">
-		</div>
-		<div class="form-group">
-		    <label>Адрес:</label>
-		    <input type="text" class="form-control" placeholder="Введите адрес">
-		</div>
-		<div class="form-group">
-		    <label>Email:</label>
-		    <input value="<?php if(User::logged()) echo User::get("email") ?>" type="email" class="form-control" placeholder="Введите email">
-		</div>
-		<div class="form-group">
-		    <label>Телефон:</label>
-		    <input value="<?php if(User::logged()) echo User::get("phone") ?>" type="tel" class="form-control" placeholder="Введите телефон">
-		</div>
-		<div class="form-group">
-		  <textarea class="form-control" rows="5" placeholder="Комментарий к заказу"></textarea>
-		</div>
-		<button class="wth_boot_but confirm_but" onclick="ajaxController({
-			model: 'order',
-			method: 'add',
-			callback: callback,
-			pay_way: $('...').val(),
-			delivery_way: ,
-			public: ,
-			city: ,
-			address: ,
-			email: ,
-			phone: ,
-			text:
-		})">Оформить заказ</button>
+		<form>
+			<div class="form-group">
+			  <select class="form-control">
+			    <option>Выберите способ оплаты</option>
+			    <option>1</option>
+			    <option>2</option>
+			    <option>3</option>
+			  </select>
+			</div>
+			<div class="form-group">
+			  <select class="form-control">
+			    <option>Выберите способ доставки</option>
+			    <option>1</option>
+			    <option>2</option>
+			    <option>3</option>
+			  </select>
+			</div>
+			<div class="form-group">
+			    <label>ФИО:</label>
+			    <input value="<?php if(User::logged()) echo User::get("public") ?>" type="text" class="form-control" placeholder="Введите ФИО">
+			</div>
+			<div class="form-group">
+			    <label>Город:</label>
+			    <input type="text" class="form-control" placeholder="Введите город">
+			</div>
+			<div class="form-group">
+			    <label>Адрес:</label>
+			    <input type="text" class="form-control" placeholder="Введите адрес">
+			</div>
+			<div class="form-group">
+			    <label>Email:</label>
+			    <input value="<?php if(User::logged()) echo User::get("email") ?>" type="email" class="form-control" placeholder="Введите email">
+			</div>
+			<div class="form-group">
+			    <label>Телефон:</label>
+			    <input value="<?php if(User::logged()) echo User::get("phone") ?>" type="tel" class="form-control" placeholder="Введите телефон">
+			</div>
+			<div class="form-group">
+			  <textarea class="form-control" rows="5" placeholder="Комментарий к заказу"></textarea>
+			</div>
+			<button class="wth_boot_but confirm_but" onclick="ajaxController({
+				model: 'order',
+				method: 'add',
+				callback: callback,
+				pay_way: $('...').val(),
+				delivery_way: ,
+				public: ,
+				city: ,
+				address: ,
+				email: ,
+				phone: ,
+				text:
+			})">Оформить заказ</button>
+		</form>
 	</div>
 </div>
 
 <!-- БЛОК С ТОВАРАМИ -->
 <div class="cart_prod col-xs-12 col-sm-7 col-md-8 col-lg-8">
+	<h4 class="main_title au">На данный момент в корзине нет товаров!</h4>
 	<?php
 
 		$cookie = json_decode($_COOKIE['cart'], TRUE);
@@ -117,8 +120,29 @@
 	<?php } ?>
 </div>
 
+<!-- FOR ORDER MODAL -->
+<div id="order_modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content siglog_window">
+      <div class="modal-header">
+        <h4 class="modal-title main_title">Ваш заказ принят ! <br>Подробнее вы можете просмотреть в личном кабинете !</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script type="text/javascript">
 	function deleteProduct(index) {
 		$('.c_prod_part[data-id='+index+']').remove();
 	}
+
+	// ДЛЯ ОПОВЕЩЕНИЯ О ПРИНЯТИИ ЗАКАЗА
+	$('.ord_maker').click(function(){
+		$('#order_modal').modal('show');
+		setTimeout(function(){
+			$('#order_modal').modal('hide');
+		}, 2000);
+	});
+
+	
 </script>

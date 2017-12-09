@@ -165,6 +165,7 @@
 
 /* --- Стрелки --- */
 .left_arrow, .right_arrow {
+	height: 30px;
 	background: transparent;
 	border: none;
 	transition: transform 0.3s ease, fill 0.3s ease;
@@ -174,6 +175,10 @@
 	cursor: pointer;
 	fill: #333;
 }
+.left_arrow svg, .right_arrow svg {
+	height: 100%;
+	width: auto;
+}
 .left_arrow {
 	left: 10px;
 }
@@ -182,6 +187,8 @@
 }
 .left_arrow:hover, .right_arrow:hover {
 	transform: scale(1.2);
+}
+.left_arrow:hover svg, .right_arrow:hover svg {
 	fill: #d37730;
 }
 

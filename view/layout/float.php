@@ -131,7 +131,7 @@
                             <label>
                               <input type="checkbox">Запомнить
                             </label>
-                            <a href="#" class="pass_get">Забыли пароль?</a>
+                            <a data-toggle='modal' data-target='#pass_modal' class="pass_get">Забыли пароль?</a>
                           </div>
 
                           <div class="form-group visible-xs">
@@ -139,7 +139,7 @@
                                 <label>
                                   <input type="checkbox">Запомнить
                                 </label>
-                                <div class="pass_get"><a href="#">Забыли пароль?</a></div>
+                                <div><a data-toggle='modal' data-target='#pass_modal' class="pass_get">Забыли пароль?</a></div>
                               </div>
                           </div>
                           <button type="submit" class="btn confirm_but">Войти</button>
@@ -210,7 +210,32 @@
             </div>
         </div>
     </div>
-
+    <!-- FOR PASS FORGOT -->
+    <div id="pass_modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content siglog_window">
+                <div class="modal-header">
+                        <button class="close" data-dismiss="modal">X</button>
+                        <h4 class="modal-title main_title">Забыли пароль</h4>
+                </div>
+                    <div class="modal-body">
+                      <div class="form-group">
+                        <label for="inputEmail" class="enter_reg_lable">Введите Email  и мы вышлем Вам подтверждение на почту:</label>
+                        <input type="email" class="form-control" id="inputEmail" name="mail" placeholder="Введите email">
+                      </div>
+                      <div class="form-group">
+                        <label for="inputPassword" class="enter_reg_lable">Введите старый пароль:</label>
+                        <input type="password" class="form-control" id="inputPassword" name="pass" placeholder="Введите пароль">
+                      </div>
+                      <div class="form-group">
+                        <label for="inputPassword" class="enter_reg_lable">Введите новый пароль:</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="cpass" placeholder="Введите пароль">
+                      </div>
+                      <button class="btn confirm_but">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </div>
 <script type="text/javascript">
     function foo() {
         

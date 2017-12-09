@@ -31,7 +31,7 @@
 							<td>200000 грн</td>
 							<td>Самовывоз</td>
 							<td>20.10.2013</td>
-							<td class="danger">Завершено</td>
+							<td class="danger">Заказ завершен</td>
 						</tr>
 						<tr>
 							<td><a href="#">Xenum12345</td></a>
@@ -39,7 +39,7 @@
 							<td>200000 грн</td>
 							<td>Самовывоз</td>
 							<td>20.10.2013</td>
-							<td class="danger">Завершено</td>
+							<td class="danger">Заказ завершен</td>
 						</tr>
 						<tr>
 							<td><a href="#">Xenum12345</td></a>
@@ -47,7 +47,7 @@
 							<td>200000 грн</td>
 							<td>Самовывоз</td>
 							<td>20.10.2013</td>
-							<td class="danger">Завершено</td>
+							<td class="warning">Ожидается подтверждение</td>
 						</tr>
 						<tr>
 							<td><a href="#">Xenum12345</td></a>
@@ -55,7 +55,7 @@
 							<td>200000 грн</td>
 							<td>Самовывоз</td>
 							<td>20.10.2013</td>
-							<td class="danger">Завершено</td>
+							<td class="danger">Заказ завершен</td>
 						</tr>
 						<tr>
 							<td><a href="#">Xenum12345</td></a>
@@ -63,7 +63,7 @@
 							<td>200000 грн</td>
 							<td>Самовывоз</td>
 							<td>20.10.2013</td>
-							<td class="success">Активный</td>
+							<td class="warning">Ожидается подтверждение</td>
 						</tr>
 						<tr>
 							<td><a href="#">Xenum12345</td></a>
@@ -71,7 +71,7 @@
 							<td>200000 грн</td>
 							<td>Самовывоз</td>
 							<td>20.10.2013</td>
-							<td class="success">Активный</td>
+							<td class="success">Заказ принят</td>
 						</tr>
 						<tr>
 							<td><a href="#">Xenum12345</td></a>
@@ -79,7 +79,7 @@
 							<td>200000 грн</td>
 							<td>Самовывоз</td>
 							<td>20.10.2013</td>
-							<td class="danger">Завершено</td>
+							<td class="danger">Заказ завершен</td>
 						</tr>
 						<tr>
 							<td><a href="#">Xenum12345</td></a>
@@ -87,7 +87,7 @@
 							<td>200000 грн</td>
 							<td>Самовывоз</td>
 							<td>20.10.2013</td>
-							<td class="success">Активный</td>
+							<td class="success">Заказ принят</td>
 						</tr>
 					</tbody>
 				</table>
@@ -159,35 +159,39 @@
 		      <form role="form" class="pr_inf_cnt">
 		      	<div class="form-group pr_edit_acc">
 				    <label>Изменить ФИО</label>
-				    <div onclick="pInfEd(4)" class="wth_boot_but confirm_but pr_edit_memor_pers4">Изменить</div>
+				    <div onclick="pInfEd(4)" class="wth_boot_but confirm_but pr_edit_memor_pers4 ed_pr_btt">Изменить</div>
 				    <span id="pr_ed_inf4">
 					    <input type="text" class="form-control" placeholder="Введите Ваше ФИО">
-					    <button class="wth_boot_but confirm_but pr_edit_memor">Сохранить</button>
+					    <div onclick="pInfNEd(4)" class="wth_boot_but confirm_but pr_noedit_memor4">Отменить</div>
+					    <div onclick="pInSV(4)" class="wth_boot_but confirm_but pr_edit_memor ed_m_4">Сохранить</div>
 				    </span>
 				</div>
 		      	<div class="form-group pr_edit_acc">
 				    <label>Ваш логин : USER</label>
-				    <div onclick="pInfEd(1)" class="wth_boot_but confirm_but pr_edit_memor_pers1">Изменить</div>
+				    <div onclick="pInfEd(1)" class="wth_boot_but confirm_but pr_edit_memor_pers1 ed_pr_btt">Изменить</div>
 				    <span id="pr_ed_inf1">
 					    <input type="text" class="form-control" placeholder="Введите новый логин">
-					    <button class="wth_boot_but confirm_but pr_edit_memor">Сохранить</button>
+					    <div onclick="pInfNEd(1)" class="wth_boot_but confirm_but pr_noedit_memor1">Отменить</div>
+					    <div onclick="pInSV(1)" class="wth_boot_but confirm_but pr_edit_memor ed_m_1">Сохранить</div>
 				    </span>
 				</div>
 				<div class="form-group pr_edit_acc">
 				    <label>Изменить пароль</label>
-				    <div onclick="pInfEd(2)" class="wth_boot_but confirm_but pr_edit_memor_pers2">Изменить</div>
+				    <div onclick="pInfEd(2)" class="wth_boot_but confirm_but pr_edit_memor_pers2 ed_pr_btt">Изменить</div>
 				    <span id="pr_ed_inf2">
 					    <input type="password" class="form-control" placeholder="Введите пароль">
 					    <input type="password" class="form-control" placeholder="Повторите пароль">
-					    <button class="wth_boot_but confirm_but pr_edit_memor">Сохранить</button>
+					    <div onclick="pInfNEd(2)" class="wth_boot_but confirm_but pr_noedit_memor2">Отменить</div>
+					    <div onclick="pInSV(2)" class="wth_boot_but confirm_but pr_edit_memor ed_m_2">Сохранить</div>
 				    </span>
 				</div>
 				<div class="form-group pr_edit_acc">
 				    <label>Изменить телефон</label>
-				    <div onclick="pInfEd(3)" class="wth_boot_but confirm_but pr_edit_memor_pers3">Изменить</div>
+				    <div onclick="pInfEd(3)" class="wth_boot_but confirm_but pr_edit_memor_pers3 ed_pr_btt">Изменить</div>
 				    <span id="pr_ed_inf3">
 					    <input type="tel" class="form-control" placeholder="Введите новый телефон">
-					    <button class="wth_boot_but confirm_but pr_edit_memor">Сохранить</button>
+					    <div onclick="pInfNEd(3)" class="wth_boot_but confirm_but pr_noedit_memor3">Отменить</div>
+					    <div onclick="pInSV(3)" class="wth_boot_but confirm_but pr_edit_memor ed_m_3">Сохранить</div>
 				    </span>
 				</div>
 			</form>
@@ -196,6 +200,17 @@
 	    </div>
 	</div>
 </div>
+
+<!-- FOR DATA MODAL -->
+<div id="data_modal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content siglog_window">
+      <div class="modal-header">
+        <h4 class="modal-title main_title">Ваши данные изменены !</h4>
+      </div>
+    </div>
+  </div>
+</div>
 	
 <script type="text/javascript">
 	function pInfEd(num){
@@ -203,5 +218,24 @@
 		$('.pr_edit_memor_pers' + num).css('display','none');
 		$('#pr_ed_inf' + num).css('display','block');
 	};
+	function pInfNEd(num){
+
+		$('.pr_edit_memor_pers' + num).css('display','block');
+		$('#pr_ed_inf' + num).css('display','none');
+	};
+
+	function pInSV(num){
+
+		$('.pr_edit_memor_pers' + num).css('display','block');
+		$('#pr_ed_inf' + num).css('display','none');
+	};
+
+	// ДЛЯ ОПОВЕЩЕНИЯ ОБ ИЗМЕНЕНИИ ДАННЫХ 
+	$('.pr_edit_memor').click(function(){
+		$('#data_modal').modal('show');
+		setTimeout(function(){
+			$('#data_modal').modal('hide');
+		}, 1000);
+	});
 
 </script>
