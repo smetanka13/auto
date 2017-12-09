@@ -108,6 +108,7 @@
 	box-shadow: 0px 0px 7px 0px #333333 inset;
 	margin: 5px 2.5%;
 	float: left;
+	transition: all 0.3s ease;
 }
 
 .cart div {
@@ -152,8 +153,8 @@
 	line-height: 40px;
 	float: left;
 }
-.cart:hover div{
-	transform: translateX(10px);
+.cart:hover {
+	box-shadow: 0px 0px 50px -12px #333333 inset;
 }
 /*FOR SECOND PART OF HEADER*/
 .sec_head {

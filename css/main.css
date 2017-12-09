@@ -227,6 +227,11 @@ li > a:focus {
     margin-bottom: 50px;
 }
 
+.back{
+    background-image: url(../images/main/f1.png);
+    background-repeat: no-repeat;background-position: center;background-size: cover;
+}
+
 /*FOR ANIMATE CSS*/
 .hidden_css {
 

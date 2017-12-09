@@ -345,6 +345,14 @@
             <div id="values"></div>
             <button class="wth_boot_but confirm_but" onclick="upload()">Оформить</button>
         </div>
+        <div id="" class="col-md-12 cnt_all">
+            <h1 class="main_title">Добавить статью</h1>
+            <input type="text" id="" placeholder="Заголовок">
+            <textarea style="resize: both" id="" placeholder="Описание статьи"></textarea>
+            Выберите одну или несколько фотографий <br><input type="file" id="" accept="image/jpeg,image/png">
+            <div id="values"></div>
+            <button class="wth_boot_but confirm_but" onclick="upload()">Опубликовать</button>
+        </div>
     </div>
 </div>
 <script type="text/javascript">

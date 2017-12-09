@@ -2,29 +2,26 @@
 /* --- Контейнер товаров --- */
 #product_block {
 	width: 100%;
-	height: 840px;
-
-	/*добавила фон для экспериментa*/
-	/*background-image: url(../images/main/bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;*/
+	height: 1040px;
+	background-image: url(../images/main/f2.jpg);
+	background-repeat: no-repeat;background-position: center;background-size: cover;
 }
 .product_cnt {
 	position: relative;
 	width: 100%;
-	height: 420px;
+	height: 470px;
 	padding: 20px 0;
 }
 .prods_header {
 	position: relative;
-	margin: 0 auto;
+	margin: 50px auto;
 	height: 30px;
 	width: 100%;
 	text-align: center;
 	line-height: 200%;
 	text-transform: uppercase;
 	font-weight: bold;
+	color: #333;
 }
 .prods_header::after {
 	content: '';
@@ -109,6 +106,7 @@
 	bottom: 0;
 	max-width: 170px;
 	max-height: 170px;
+	border-radius: 5px;
 }
 /* --- Параметры товара --- */
 .prods_cnt p {

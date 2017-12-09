@@ -46,20 +46,6 @@
 <script type="text/javascript" src="js/slick.min.js"></script>
 
 <script type="text/javascript">
-	$(document).ready(function() {
-
-		/* --- SLIDER SENSOR --- */
-		var size = window.innerWidth;
-		$('#slider_cnt').slick({
-			speed: 200,
-			arrows: false,
-			autoplay: true,
-			infinite: true
-		});
-	});
-</script>
-
-<script type="text/javascript">
 		$(document).ready(function(){
 
 			var rightArr = $('#s_rg');
@@ -71,6 +57,7 @@
 
 			// $('.img_cnt ul li').length;
 			rightArr.click(function(){
+				alert();
 				if (offset >= maxOffset) return;
 				offset += 100;
 				contSl.css('left','-' + offset + '%');
@@ -86,7 +73,17 @@
 
 				n=4;
 			}
+
+			/* --- SLIDER SENSOR --- */
+			var size = window.innerWidth;
+			$('#slider_cnt').slick({
+				speed: 200,
+				arrows: false,
+				autoplay: true,
+				infinite: true
+			});
 </script>
+
 <!-- <script type="text/javascript">
 	$(document).ready(function(){
 		$('#product_block').addClass("hidden_css").viewportChecker({
