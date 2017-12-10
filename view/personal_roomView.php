@@ -1,11 +1,11 @@
 <link rel="stylesheet" type="text/css" href="css/personal_room.css">
 
 <div class="container pr_main au btm">
-	<h4 class="main_title tl_mg">Личный кабинет</h4>
+	<h4 class="main_title tl_mg"></h4>
 	<ul class="nav nav-tabs pr_tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Покупки</a></li>
-    <li><a data-toggle="tab" href="#menu1">Скидки и предложения</a></li>
-    <li><a data-toggle="tab" href="#menu2">Личные данные</a></li>
+    <li class="active"><a data-toggle="tab" href="#home"><i class="fa fa-shopping-cart fa-fw" aria-hidden="true"></i> Покупки</a></li>
+    <li><a data-toggle="tab" href="#menu1"><i class="fa fa-star-half-o fa-fw" aria-hidden="true"></i> Скидки и предложения</a></li>
+    <li><a data-toggle="tab" href="#menu2"><i class="fa fa-user  fa-fw" aria-hidden="true"></i> Личные данные</a></li>
   </ul>
 
     <div class="tab-content">
@@ -158,7 +158,7 @@
 	      <p>Тут вы можете редактировать параметры аккаунта.</p>
 		      <form role="form" class="pr_inf_cnt">
 		      	<div class="form-group pr_edit_acc">
-				    <label>Изменить ФИО</label>
+				    <label><i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i> Изменить ФИО</label>
 				    <div onclick="pInfEd(4)" class="wth_boot_but confirm_but pr_edit_memor_pers4 ed_pr_btt">Изменить</div>
 				    <span id="pr_ed_inf4">
 					    <input type="text" class="form-control" placeholder="Введите Ваше ФИО">
@@ -167,7 +167,7 @@
 				    </span>
 				</div>
 		      	<div class="form-group pr_edit_acc">
-				    <label>Ваш логин : USER</label>
+				    <label><i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i> Ваш логин : USER</label>
 				    <div onclick="pInfEd(1)" class="wth_boot_but confirm_but pr_edit_memor_pers1 ed_pr_btt">Изменить</div>
 				    <span id="pr_ed_inf1">
 					    <input type="text" class="form-control" placeholder="Введите новый логин">
@@ -176,7 +176,7 @@
 				    </span>
 				</div>
 				<div class="form-group pr_edit_acc">
-				    <label>Изменить пароль</label>
+				    <label><i class="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i> Изменить пароль</label>
 				    <div onclick="pInfEd(2)" class="wth_boot_but confirm_but pr_edit_memor_pers2 ed_pr_btt">Изменить</div>
 				    <span id="pr_ed_inf2">
 					    <input type="password" class="form-control" placeholder="Введите пароль">
@@ -186,7 +186,7 @@
 				    </span>
 				</div>
 				<div class="form-group pr_edit_acc">
-				    <label>Изменить телефон</label>
+				    <label><i class="fa fa-phone-square fa-lg fa-fw" aria-hidden="true"></i> Изменить телефон</label>
 				    <div onclick="pInfEd(3)" class="wth_boot_but confirm_but pr_edit_memor_pers3 ed_pr_btt">Изменить</div>
 				    <span id="pr_ed_inf3">
 					    <input type="tel" class="form-control" placeholder="Введите новый телефон">
@@ -196,7 +196,7 @@
 				</div>
 			</form>
 			<label class="lgo_lb">Покинуть аккаунт?</label>
-			<div data-toggle="modal" data-target="#logout_bar" class="btn confirm_but">Выйти с аккаунта</div>
+			<div data-toggle="modal" data-target="#logout_bar" class="btn confirm_but"><i class="fa fa-sign-out fa-lg fa-fw" aria-hidden="true"></i> Выйти с аккаунта</div>
 	    </div>
 	</div>
 </div>

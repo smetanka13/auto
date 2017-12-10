@@ -314,15 +314,15 @@
 
 .reglog img {
 
-	width: 40px;
-	height: 40px;
+	width: 30px;
+	height: 30px;
+	margin-top: 5px;
 	float: left;
 }
 
 .reglog span {
 
 	line-height: 40px;
-	margin-left: 10px;
 	text-align: center;
 	font-weight: bold;
 	width: 100%;

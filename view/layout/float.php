@@ -116,7 +116,7 @@
                         <div class="modal-body">
                         <form class="enter_reg_place" action="../cgi/log_in.php" method="post">
                           <div class="form-group">
-                            <label for="inputLogin_2" class="enter_reg_lable">Login:</label>
+                            <label for="inputLogin_2" class="enter_reg_lable"><i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i> Login:</label>
                             <input type="text" class="form-control" id="inputLogin_2" name="login" placeholder="Введите login">
                           </div>
                           <!--  <div class="form-group">
@@ -124,14 +124,14 @@
                             <input type="email" class="form-control" id="inputEmail" placeholder="Введите email">
                           </div> -->
                           <div class="form-group">
-                            <label for="inputPassword" class="enter_reg_lable">Пароль:</label>
+                            <label for="inputPassword" class="enter_reg_lable"><i class="fa fa-unlock-alt fa-lg fa-fw" aria-hidden="true"></i> Пароль:</label>
                             <input type="password" class="form-control" id="inputPassword" name="pass" placeholder="Введите пароль">
                           </div>
                           <div class="checkbox hidden-xs">
                             <label>
                               <input type="checkbox">Запомнить
                             </label>
-                            <a data-toggle='modal' data-target='#pass_modal' class="pass_get">Забыли пароль?</a>
+                            <a id="fg_pass" data-toggle='modal' data-target='#pass_modal' class="pass_get">Забыли пароль?</a>
                           </div>
 
                           <div class="form-group visible-xs">
@@ -144,7 +144,7 @@
                           </div>
                           <button type="submit" class="btn confirm_but">Войти</button>
                           <label class="rg_no">Еще не зарегистрированы?</label>
-                          <div type="submit" class="btn confirm_but" data-toggle='modal' data-target='#regist_modal'>Зарегистрироваться</div>
+                          <div id="no_reg" type="submit" class="btn confirm_but " data-toggle='modal' data-target='#regist_modal'>Зарегистрироваться</div>
                           </form>
                         </div>
                     </div>
@@ -161,19 +161,19 @@
                 </div>
                     <div class="modal-body">
                       <div class="form-group">
-                        <label for="inputEmail" class="enter_reg_lable">Email:</label>
+                        <label for="inputEmail" class="enter_reg_lable"><i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i> Email:</label>
                         <input type="email" class="form-control" id="inputEmail" name="mail" placeholder="Введите email">
                       </div>
                       <div class="form-group">
-                        <label for="inputText" class="enter_reg_lable">Логин:</label>
+                        <label for="inputText" class="enter_reg_lable"><i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i> Логин:</label>
                         <input type="text" class="form-control" id="inputLogin" name="login" placeholder="Введите логин">
                       </div>
                       <div class="form-group">
-                        <label for="inputPassword" class="enter_reg_lable">Пароль:</label>
+                        <label for="inputPassword" class="enter_reg_lable"><i class="fa fa-unlock-alt fa-lg fa-fw" aria-hidden="true"></i> Пароль:</label>
                         <input type="password" class="form-control" id="inputPassword" name="pass" placeholder="Введите пароль">
                       </div>
                       <div class="form-group">
-                        <label for="inputPassword" class="enter_reg_lable">Подтвердите пароль:</label>
+                        <label for="inputPassword" class="enter_reg_lable"><i class="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i> Подтвердите пароль:</label>
                         <input type="password" class="form-control" id="confirmPassword" name="cpass" placeholder="Введите пароль">
                       </div>
 
@@ -199,7 +199,7 @@
             <div class="modal-content siglog_window">
                 <div class="modal-header">
                     <button class="close" data-dismiss="modal">X</button>
-                    <h4 class="modal-title main_title">Выйти из аккаунта?</h4>
+                    <h4 class="modal-title main_title"><i class="fa fa-sign-out fa-lg fa-fw" aria-hidden="true"></i> Выйти из аккаунта?</h4>
                 </div>
                 <div class="modal-body">
                     <form class="enter_reg_place">
@@ -220,15 +220,15 @@
                 </div>
                     <div class="modal-body">
                       <div class="form-group">
-                        <label for="inputEmail" class="enter_reg_lable">Введите Email  и мы вышлем Вам подтверждение на почту:</label>
+                        <label for="inputEmail" class="enter_reg_lable"><i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i> Введите Email  и мы вышлем Вам подтверждение на почту:</label>
                         <input type="email" class="form-control" id="inputEmail" name="mail" placeholder="Введите email">
                       </div>
                       <div class="form-group">
-                        <label for="inputPassword" class="enter_reg_lable">Введите старый пароль:</label>
+                        <label for="inputPassword" class="enter_reg_lable"><i class="fa fa-unlock-alt fa-lg fa-fw" aria-hidden="true"></i> Введите старый пароль:</label>
                         <input type="password" class="form-control" id="inputPassword" name="pass" placeholder="Введите пароль">
                       </div>
                       <div class="form-group">
-                        <label for="inputPassword" class="enter_reg_lable">Введите новый пароль:</label>
+                        <label for="inputPassword" class="enter_reg_lable"><i class="fa fa-unlock-alt fa-lg fa-fw" aria-hidden="true"></i> Введите новый пароль:</label>
                         <input type="password" class="form-control" id="confirmPassword" name="cpass" placeholder="Введите пароль">
                       </div>
                       <button class="btn confirm_but">Отправить</button>
@@ -240,4 +240,12 @@
     function foo() {
         
     }
+
+    // for modals
+    $('#no_reg').click(function(){
+        $('#signin_modal').modal('hide');
+    });
+    $('#fg_pass').click(function(){
+        $('#signin_modal').modal('hide');
+    });
 </script>

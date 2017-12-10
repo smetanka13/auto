@@ -17,7 +17,7 @@
 	</div>
 	<div class="cont_map">
 		<h4 class="main_title tl_mg">Мы на карте</h4>
-		<p>Украина ,г.Одесса Авторынок Куяльник павильён 503-504</p>
+		<p><i class="fa fa-globe fa-lg fa-fw" aria-hidden="true"></i> Украина ,г.Одесса Авторынок Куяльник павильён 503-504</p>
 		<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d175914.4941790267!2d30.617994838121078!3d46.45535480189495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z0LMu0J7QtNC10YHRgdCwINCQ0LLRgtC-0YDRi9C90L7QuiDQmtGD0Y_Qu9GM0L3QuNC6IA!5e0!3m2!1sru!2sua!4v1512316710217" frameborder="0" style="border:0" allowfullscreen></iframe>
 	</div>
 	<div class="cont_cont">
@@ -33,9 +33,9 @@
 			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
 				<h4 class="main_title tl_mg">Мы в социальных сетях:</h4>
 				<ul class="list-unstyled ct_cnt">
-				  <li><a href="#"><img src="images/icons/fb.svg">Facebook</a></li>
-				  <li><a href="#"><img src="images/icons/vk.svg">Вконтакте</a></li>
-				  <li><a href="#"><img src="images/icons/yt.svg">YouTube</a></li>
+				  <li><a href="#"><i class="fa fa-facebook-official fa-lg fa-fw" aria-hidden="true"></i>  Facebook</a></li>
+				  <li><a href="#"><i class="fa fa-vk fa-lg fa-fw" aria-hidden="true"></i>  Вконтактe</a></li>
+				  <li><a href="#"><i class="fa fa-youtube-play fa-lg fa-fw" aria-hidden="true"></i>  YouTube</a></li>
 				</ul>
 			</div>
 		</div>

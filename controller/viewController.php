@@ -27,6 +27,8 @@
 	<link rel="stylesheet" type="text/css" href="library/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="library/bootstrap/css/bootstrap-theme.min.css">
 	<link href="css/main.css" rel="stylesheet" type="text/css"/>
+	<!-- for i icons -->
+	<script src="https://use.fontawesome.com/d5e6561c97.js"></script>
 
 	<?php
 		$GLOBALS['_TITLE'] = NAME;
