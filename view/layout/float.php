@@ -245,7 +245,7 @@
     $('#no_reg').click(function(){
         $('#signin_modal').modal('hide');
     });
-    $('#fg_pass').click(function(){
+    $('.pass_get').click(function(){
         $('#signin_modal').modal('hide');
     });
 </script>
