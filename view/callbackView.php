@@ -5,9 +5,8 @@
 <script src="library/raty-master/lib/jquery.raty.js"></script>
 
 <div class="main_cont_cnt content_cnt">
-	<h4 class="main_title tl_mg">Отзывы о компании Интенет-магазин для автомобилей "FOX-motors"</h4>
 	<div class="container-fluid com_bt">
-		<button data-toggle='modal' data-target='#callback_modal' class="btn confirm_but"><img src="images/icons/comment.svg">Оставить отзыв</button>
+		<button data-toggle='modal' data-target='#callb_modal' class="btn confirm_but"><i class="fa fa-pencil-square-o fa-lg fa-fw" aria-hidden="true"></i> Оставить отзыв</button>
 	</div>
 	<div class="container-fluid">
 		<div class="com_bl">
@@ -43,12 +42,12 @@
 </div>
 
 <!-- FOR callback -->
-<div id="callback_modal" class="modal fade">
+<div id="callb_modal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content siglog_window">
 			<div class="modal-header">
 				<button class="close" data-dismiss="modal">X</button>
-				<h4 class="modal-title main_title">Оставьте Ваш отзыв</h4>
+				<h4 class="modal-title main_title"><i class="fa fa-pencil-square-o fa-lg fa-fw" aria-hidden="true"></i> Оставьте Ваш отзыв</h4>
 			</div>
 			<div class="modal-body">
 				<form class="enter_reg_place" >

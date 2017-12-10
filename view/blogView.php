@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="css/blog.css">
 
-<div class="wrapper container-fluid blog_back">
+<div class="wrapper container-fluid blog_back back">
 		<div class="blog_main_block container-fluid">
 			<div class="some_info_block_back col-xs-12 col-sm-12 col-md-6 col-lg-6">
 				<div class="some_info_block"><a title="Нажмите , чтобы читать далее" href="new">

@@ -27,8 +27,8 @@
 			<li class="pr_name"><?= $product['title'] ?></li>
 			<li class="code_name">Код товара : 67839992</li>
 			<li>Цена : <b><?= $product['price'] ?></b> &euro;</li>
-			<li><a href="delivery">Условия доставки</a></li>
-			<li><a href="#">Видео на YouTube</a></li>
+			<li><a href="delivery"><i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i> Условия доставки</a></li>
+			<li><a href="#"><i class="fa fa-youtube-play fa-lg fa-fw" aria-hidden="true"></i> Видео на YouTube</a></li>
 			<li><select>
 				<option>Выберите литраж</option>
 				<option>1л</option>
